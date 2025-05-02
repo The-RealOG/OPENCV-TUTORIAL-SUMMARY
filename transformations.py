@@ -29,9 +29,25 @@ def rotate(img, angle, rotPoint=None): # img, angle, rotation point
     return cv.warpAffine(img, rotMat, dimensions) # img, rotation matrix, dimensions # cv.warpAffine() applies an affine transformation to the image
    
 rotated = rotate(img, 45) # img, angle: + angle --> clockwise, - angle --> counterclockwise
-cv.imshow('Rotated', rotated)
+#cv.imshow('Rotated', rotated)
 
+# Resizing: 
+resized = cv.resize(img, (500, 500), interpolation=cv.INTER_CUBIC) # img, size, interpolation
+# INTER_AREA = resampling using pixel area relation
+# INTER_CUBIC = bicubic interpolation over 4x4 pixel neighborhood
+# INTER_LINEAR = bilinear interpolation (default)
+# cv.imshow('Resized', resized)
 
+# Flipping
+flipped = cv.flip(img, 0) # img, flip code
+# 0 --> flip vertically
+# 1 --> flip horizontally
+# -1 --> flip both vertically and horizontally
+cv.imshow('Flipped', flipped)
+
+# Cropping
+cropped = img[50:200, 200:400] # img[y1:y2, x1:x2]
+cv.imshow('Cropped', cropped)
 
 cv.waitKey(0)
 cv.destroyAllWindows()
