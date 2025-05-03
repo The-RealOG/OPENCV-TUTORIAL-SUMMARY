@@ -22,7 +22,13 @@ bitwise_or = cv.bitwise_or(rectangle, circle) # performs a bitwise OR operation 
 
 # Bitwise XOR
 bitwise_xor = cv.bitwise_xor(rectangle, circle) # performs a bitwise XOR operation (returns all areas of both shapes except the common area)
-cv.imshow('Bitwise XOR', bitwise_xor) # displays the result
+#cv.imshow('Bitwise XOR', bitwise_xor) # displays the result
+
+# Bitwise NOT
+bitwise_not_rectangle = cv.bitwise_not(rectangle) # performs a bitwise NOT operation (inverts the color on the rectangle)
+bitwise_not_circle = cv.bitwise_not(circle) # performs a bitwise NOT operation (inverts the color on circle)
+cv.imshow('Bitwise NOT Rectangle', bitwise_not_rectangle) # displays the result
+cv.imshow('Bitwise NOT Circle', bitwise_not_circle) # displays the result
 
 cv.waitKey(0)
 cv.destroyAllWindows()
